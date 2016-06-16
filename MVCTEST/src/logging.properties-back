@@ -1,0 +1,21 @@
+log4j.rootLogger=DEBUG, file, errfile, stdout
+  
+log4j.appender.file=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.file.File=/home/jboss/applogs/my.log
+log4j.appender.file.Append=true
+log4j.appender.file.DatePattern='.'yyyy-MM-dd
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d %p [%C{10}] %m [%X{userId}]%n
+  
+log4j.appender.errfile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.errfile.Threshold=INFO
+log4j.appender.errfile.File=/home/jboss/applogs/my-error.log
+log4j.appender.errfile.Append=true
+log4j.appender.errfile.DatePattern='.'yyyy-MM-dd
+log4j.appender.errfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.errfile.layout.ConversionPattern=%d %p [%C{10}] %m [%X{userId}]%n
+  
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d %p [%C{10}] %m [%X{userId}]%n
